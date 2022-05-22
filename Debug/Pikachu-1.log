@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Pikachu-1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+D:\Project LTNC\PikachuLTNC\header\tools\wordPrinter.hpp(14,22): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
+D:\Project LTNC\PikachuLTNC\header\tools\wordPrinter.hpp(14,25): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
+D:\Project LTNC\PikachuLTNC\header\tools\wordPrinter.hpp(14,28): warning C4838: conversion from 'int' to 'Uint8' requires a narrowing conversion
+D:\Project LTNC\PikachuLTNC\main.cpp(74,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\Project LTNC\PikachuLTNC\main.cpp(75,18): warning C4101: 'surface': unreferenced local variable
+  Pikachu-1.vcxproj -> D:\Project LTNC\PikachuLTNC\Debug\PikachuLTNC.exe
