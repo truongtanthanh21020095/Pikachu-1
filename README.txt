@@ -17,7 +17,7 @@ cặp pokemon đó, càng xa nhau càng được nhiều điểm.
 
 III, Các kỹ thuật dùng để xử lý khi lập trình:
 - Sử dụng thư viện đồ họa SDL2
-- Mảng, struct, ......
+- Mảng, struct, đọc ghi file txt......
 
 IV, Hướng phát triển 
 - Cải tiến đồ họa cho đẹp hơn 
