@@ -1,2 +1,2 @@
 D:\Project LTNC\Pikachu-1\Debug\Pikachu-1.exe
-D:\Project LTNC\PikachuLTNC\Debug\PikachuLTNC.exe
+D:\Project LTNC\PikachuLTNC\Debug\Pikachu-1.exe

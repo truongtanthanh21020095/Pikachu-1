@@ -22,7 +22,7 @@ struct coordinate
 };
 
 int monstevalue[20][20], monste[40], level;
-arrayChecker Plus_sign[20][20]; //lưu lại dấu + để in đường đi
+arrayChecker Plus_sign[20][20]; //save the + sign to find the way
 bool unmuteSound = true;
 int numOfHints, Score;
 SDL_Window* window;
