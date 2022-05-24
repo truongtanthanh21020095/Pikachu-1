@@ -56,7 +56,7 @@ void SolveEvent (SDL_Texture* texture,SDL_Renderer* renderer)
             }
             xx-= 230;
             yy-= 60;
-            // Sự kiện khi click vào quái 
+            // Events when click on monster btn 
             if(xx >= 0 && yy >= 0)
             {
                 monsterClicked ++;

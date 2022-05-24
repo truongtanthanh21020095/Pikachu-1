@@ -37,7 +37,7 @@ void print(SDL_Texture* texture,SDL_Renderer* renderer,bool newgame,bool zoom1,b
 }
 void start(SDL_Texture* texture,SDL_Renderer* renderer,bool newgame)
 {
-    print(texture,renderer,newgame,false,false,false);//hiện ra menu ban đầu 
+    print(texture,renderer,newgame,false,false,false);//Show main menu 
     SDL_Event e;
     while (true)
         {

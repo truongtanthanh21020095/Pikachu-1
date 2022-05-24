@@ -1,6 +1,6 @@
 ﻿#ifndef _gamehints_
 #define _gamehints_
-coordinate hints[300]; //Mảng chứa tất cả những cặp ăn được
+coordinate hints[300]; //Array contains all of available "eat" monter pairs
 int testhint()
 {
     int d = 0;
@@ -14,7 +14,7 @@ int testhint()
                     else if (monstevalue[ii][jj] == monstevalue[i][j]) {
                         if (testtwopoints(i, j, ii, jj) == true) {
                             d++;
-                            hints[2 * d].i = i; //Lưu tạo độ của những cặp ăn được 
+                            hints[2 * d].i = i; //Save the coordinates of edible pairs
                             hints[2 * d].j = j;
                             hints[2 * d + 1].i = ii;
                             hints[2 * d + 1].j = jj;

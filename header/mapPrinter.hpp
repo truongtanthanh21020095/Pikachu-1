@@ -62,7 +62,7 @@ void printMap(SDL_Texture* texture, SDL_Renderer* renderer)
     ssss = change_NumberToString(sec);
     printWord(texture, renderer, change_NumberToString(sec), 40, 1005 - ssss.length() * 5, 560, 243, 156, 18, "fonttime.ttf");
 
-    //in mảng quái 9x16
+    //Print monster matrix 9x16
     for (int i = 1; i <= 9; i++)
         for (int j = 1; j <= 16; j++)
             if (monstevalue[i][j] > 0 && monstevalue[i][j] <= 36)
@@ -74,7 +74,7 @@ void printMap(SDL_Texture* texture, SDL_Renderer* renderer)
 
                 SDL_RenderCopy(renderer, texture_monster[monstevalue[i][j]], NULL, &range);
             }
-    // background xanh mờ khi click vào quái 
+    // change background to lime when click on monter 
     if (monsterClicked >= 1 && monsterOxy[1].j >= 1 && monsterOxy[1].j <= 16 && monsterOxy[1].i >= 1 && monsterOxy[1].i <= 9)
     {
         if (monstevalue[monsterOxy[1].i][monsterOxy[1].j] > 0) {

@@ -27,7 +27,7 @@ bool unmuteSound = true;
 int numOfHints, Score;
 SDL_Window* window;
 clock_t timegame, time_elapsed;
-coordinate monsterOxy[2+1]; // Lưu tọa độ Oxy con quái đang được chọn
+coordinate monsterOxy[2+1]; // Save coordinates Oxy the monster is being selected
 int monsterClicked = 0;
 bool quit;
 int sotexture;
@@ -77,16 +77,16 @@ int main(int argc, char* argv[])
     Mix_Music* music = NULL;
 
     initSDL(window, renderer);
-    create_texture(); // add hết ảnh quái vào ram 
+    create_texture(); // add full list texture_quai ram 
     quit = false;
-    //---- Xử lí âm thanh
+    //---- Music proccess
     if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) == -1) printf("%s", Mix_GetError());
     music = Mix_LoadMUS("Music/nen.mp3");
     if (music == NULL) printf("%s", Mix_GetError());
     Mix_PlayMusic(music, -1);
 
     if (TTF_Init() < 0) SDL_Log("%s", TTF_GetError());
-    // Check xem game còn chơi dở không, nếu k thì tạo game mới 
+    // Check if last game saves, else -> create a new game 
     ReadFile();
     bool newgame;
     if (level == 0 && endlevel() == true) newgame = true;

@@ -1,9 +1,11 @@
 ﻿#ifndef _timduongdi_
 #define _timduongdi_
 
-int booleanWay[20][20], duongdimin; //booleanWay[][] để in đường đi
-bool testtwopointsin(int i1,  int j1, int i2, int j2) //Lưu lại đường đi để vẽ ra + Ktra xem 2 dấu + có chạm nhau không
-{                                                     //Tìm độ dài đường đi và cụ thể đường đi đấy ntn
+int booleanWay[20][20], minWay; //booleanWay[][] to print the way
+bool testtwopointsin(int i1,  int j1, int i2, int j2) 
+//Save the way to print out + Check if the 2 + signs touch each other
+//Find the length of min way and show that way 
+{                                                     
 	int imin, imax, jmin, jmax;
     imin = max (Plus_sign[i1][j1].i1, Plus_sign[i2][j2].i1);
     imax = min (Plus_sign[i1][j1].i3, Plus_sign[i2][j2].i3);
@@ -11,7 +13,7 @@ bool testtwopointsin(int i1,  int j1, int i2, int j2) //Lưu lại đường đi
     jmax = min (Plus_sign[i1][j1].j2, Plus_sign[i2][j2].j2);
 
 	bool dau = false;
-	duongdimin = 1000; //Điểm để tính theo trục Oy
+	minWay = 1000; //Points to calculate on the Oy axis
 	if(j2 < j1) { swap( i1, i2); swap( j1, j2); }
 
 	int ionnhat = -1;
@@ -19,9 +21,9 @@ bool testtwopointsin(int i1,  int j1, int i2, int j2) //Lưu lại đường đi
 		for(int i = imin;i <= imax; i++)
                 if(Plus_sign[i][j1].j2 >= j2) {
                     dau = true;
-                    if(duongdimin > abs(i-i1) + abs(i-i2) + abs(j1-j2)) {
+                    if(minWay > abs(i-i1) + abs(i-i2) + abs(j1-j2)) {
                         ionnhat = i;
-                        duongdimin = abs(i-i1) + abs(i-i2) + abs(j1-j2);
+                        minWay = abs(i-i1) + abs(i-i2) + abs(j1-j2);
                     }
                 }
     if(ionnhat >= 0)
@@ -37,38 +39,38 @@ bool testtwopointsin(int i1,  int j1, int i2, int j2) //Lưu lại đường đi
         swap( i1, i2);  
         swap( j1, j2);
     }
-    int demduongdi2 = 1000; //điểm tính theo trục Ox 
+    int minWay2 = 1000; //Points to calculate on the Ox axis 
     int jonnhat = -1;
 	if(jmin <= jmax)
 		for(int j = jmin; j <= jmax; j++)
                 if(Plus_sign[i1][j].i3 >= i2){
                     dau = true;
-                    if(demduongdi2 > abs(i1-i2) + abs(j-j2) + abs(j-j1)) {
+                    if(minWay2 > abs(i1-i2) + abs(j-j2) + abs(j-j1)) {
                         jonnhat = j;
-                        demduongdi2 = abs(i1-i2) + abs(j-j2) + abs(j-j1);}
+                        minWay2 = abs(i1-i2) + abs(j-j2) + abs(j-j1);}
                     }
     
-    if(demduongdi2 < duongdimin)
+    if(minWay2 < minWay)
     {
             for(int i = 0;i <= 10; i++)
                 for(int j = 0;j <= 17; j++)
                         booleanWay[i][j]=0;
-            //In đường số 1 thẳng xuống 
+            //Print line 1 straight down
             if(jonnhat > j1)    for(int jj = j1; jj <= jonnhat; jj++) booleanWay[i1][jj] = 1;
                 else            for(int jj = j1; jj >= jonnhat; jj--) booleanWay[i1][jj] = 1;
             if(jonnhat > j2)    for(int jj = j2; jj <= jonnhat; jj++) booleanWay[i2][jj] = 1;
                 else            for(int jj = j2; jj >= jonnhat; jj--) booleanWay[i2][jj] = 1;
-            //In những đường số 1 ngang
+            //Print horizontal number 1 lines
             if(i1<=i2)          for(int ii = i1; ii <= i2; ii++) booleanWay[ii][jonnhat] = 1;
                 else            for(int ii = i2; ii <= i1; ii++) booleanWay[ii][jonnhat] = 1;
-            duongdimin = demduongdi2;
+            minWay = minWay2;
     }
 
 	return dau;
 }
 bool timduongdi(SDL_Texture* texture,SDL_Renderer* renderer,int i1,int j1,int i2,int j2)
 {
-    duongdimin = 10000;
+    minWay = 10000;
     for(int i = 0;i <= 10; i++)
         for(int j = 0;j <= 17; j++) 
             booleanWay[i][j] = 0;
@@ -76,7 +78,7 @@ bool timduongdi(SDL_Texture* texture,SDL_Renderer* renderer,int i1,int j1,int i2
     booleanWay[i1][j1] = 1;
     booleanWay[i2][j2] = 1;
 
-    if( (i2 == i1+1 && j2 == j1) || (i2 == i1 && j2 == j1+1) || (i2 == i1-1 && j2 == j1) || (i2 == i1 && j2 == j1-1) ) duongdimin = 2; //2 con cạnh nhau
+    if( (i2 == i1+1 && j2 == j1) || (i2 == i1 && j2 == j1+1) || (i2 == i1-1 && j2 == j1) || (i2 == i1 && j2 == j1-1) ) minWay = 2; //2 con cạnh nhau
     else if( testtwopointsin( i1, j1, i2, j2) == false) return false;
 
     monstevalue[i1][j1] = 0;
@@ -224,7 +226,7 @@ bool timduongdi(SDL_Texture* texture,SDL_Renderer* renderer,int i1,int j1,int i2
                      }
                 }
     SDL_RenderPresent(renderer);
-    Score+=duongdimin;
+    Score+=minWay;
     return true;
 }
 #endif // _timduongdi_
