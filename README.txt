@@ -13,7 +13,9 @@ I, Hướng dẫn cài đặt:
 		+ Visual Studio
 		+ SDL 2 (https://phattrienphanmem123az.com/lap-trinh-game-c-p2/game-cpp-phan-2-cai-dat-project.html?fbclid=IwAR3q95AWeaa69iDMsZlMlVRTtEG2K7KgeJgaY8_GEyHFUpUNu8AOVDjQDe8) 
 	- Chạy tệp Pikachu-1.sln bằng Visual Studio để mở và chạy project
+	
 II, Mô tả chung về trò chơi và chức năng
+- Video demo: https://youtu.be/E6NObN3a_Eg
 - Game có đồ họa hình ảnh, âm thanh sống động. Giao diện dễ sử dụng, đơn giản. thích hợp để giải trí nhẹ, 
 luyện tập mắt, khả năng tìm kiếm, tư duy. 
 - Sử dụng các thao tác bằng chắc click vào chuột.
