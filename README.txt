@@ -2,7 +2,17 @@ Trương Tấn Thành - 21020095
 Bài tập cuối khóa Lập Trình Nâng cao - Game Pikachu
 
 I, Hướng dẫn cài đặt:
+	1. Tải game chơi trục tiếp 
+	- Truy cập link: https://drive.google.com/file/d/1b3KjHHQB0X_Sh-z5HBw_no849lLWYNWO/view?usp=sharing
+	- Tải file về và giải nén 
+	- Mở file Pikachu_PlayGame vừa giải nén được, chạy file Pikachu-1.exe để bắt đầu trò chơi 
 
+	2. Chạy project game bằng Visual Studio (Nếu cách 1 không chạy được)
+	- Clone project game về: https://github.com/truongtanthanh21020095/Pikachu-1
+	- Máy yêu cầu cài: 
+		+ Visual Studio
+		+ SDL 2 (https://phattrienphanmem123az.com/lap-trinh-game-c-p2/game-cpp-phan-2-cai-dat-project.html?fbclid=IwAR3q95AWeaa69iDMsZlMlVRTtEG2K7KgeJgaY8_GEyHFUpUNu8AOVDjQDe8) 
+	- Chạy tệp Pikachu-1.sln bằng Visual Studio để mở và chạy project
 II, Mô tả chung về trò chơi và chức năng
 - Game có đồ họa hình ảnh, âm thanh sống động. Giao diện dễ sử dụng, đơn giản. thích hợp để giải trí nhẹ, 
 luyện tập mắt, khả năng tìm kiếm, tư duy. 
